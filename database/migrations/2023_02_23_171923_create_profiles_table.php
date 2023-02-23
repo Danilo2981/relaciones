@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('user_id')
+                ->constrained()
+                ->cascadeOnLine();
+            
+            $table->string('job');
+            $table->string('web');
+            $table->string('bio');
+
             $table->timestamps();
         });
     }
