@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Profile extends Model
+class Course extends Model
 {
     use HasFactory;
 
@@ -13,5 +13,9 @@ class Profile extends Model
     {
         return $this->belongsTo(User::class);
     }
-}
 
+    public function lessons()
+    {
+        return $this->hasMany(Course::class);
+    }
+}
