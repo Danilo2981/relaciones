@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Adress extends Model
+class Tag extends Model
 {
     use HasFactory;
 
-    public function profile()
+    public function courses()
     {
-        return $this->belongsTo(Profile::class);
+        return $this->belongsToMany(Course::class);
     }
 }

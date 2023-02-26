@@ -52,4 +52,9 @@ class User extends Authenticatable
         return $this->hasMany(Course::class);
     }
 
+    public function address()
+    {
+        return $this->hasOneThrough(Adress::class, Profile::class);
+    }
+
 }
