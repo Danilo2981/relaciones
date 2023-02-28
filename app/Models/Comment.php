@@ -5,16 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tag extends Model
+class Comment extends Model
 {
     use HasFactory;
 
-    public function courses()
-    {
-        return $this->belongsToMany(Course::class);
-    }
+    protected $guarded = [];
 
-    public function taggable()
+    public function comentable()
     {
         return $this->morphTo();
     }
